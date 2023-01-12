@@ -1,1 +1,26 @@
-@import '~bootstrap/scss/bootstrap'
+@import "~bootstrap/scss/bootstrap";
+
+h1,
+h4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cont-all {
+    background-color: rgb(162, 42, 12);
+    height: 100%;
+    color: #fff;
+    padding: 30px;
+}
+
+.cont {
+    width: 70%;
+    margin: auto;
+    img {
+        border: 5px solid #fff;
+        margin-bottom: 15px;
+        width: 250px;
+        height: 400px;
+        object-fit: cover;
+    }
+}
