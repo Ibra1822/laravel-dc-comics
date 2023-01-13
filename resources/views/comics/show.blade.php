@@ -2,15 +2,15 @@
 
 @section('content')
 <div class="cont-all text-center">
-    <h1>Dettaglio di {{$detail->title}} </h1>
-    <h4>Price : {{$detail->price}} $</h4>
-    <h4>Series : {{$detail->series}}</h4>
+    <h1>Dettaglio di {{$comic->title}} </h1>
+    <h4>Price : {{$comic->price}} $</h4>
+    <h4>Series : {{$comic->series}}</h4>
 <div class="cont text-center">
-    <img src="{{$detail->thumb}}" alt="">
-    <h4>Sele Date : {{$detail->sale_date}}</h4>
-    <h4>Type: {{$detail->type}}</h4>
+    <img src="{{$comic->thumb}}" alt="">
+    <h4>Sele Date : {{$comic->sale_date}}</h4>
+    <h4>Type: {{$comic->type}}</h4>
     <h5>Description:</h5>
-    <p>{{$detail->desc}}</p>
+    <p>{{$comic->desc}}</p>
 </div>
 
 <a class="btn btn-warning" href="{{route('comics.create')}}">Aggiungi Fumetto</a>

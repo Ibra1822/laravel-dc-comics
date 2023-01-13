@@ -17,13 +17,16 @@
       </tr>
     </thead>
     <tbody>
-    @foreach ($comics as $item)
+    @foreach ($comics as $comic)
       <tr>
-        <th scope="row">{{$item['title']}}</th>
-        <td>{{$item['price']}} $</td>
-        <td>{{$item['type']}}</td>
-        <td>{{$item['sale_date']}}</td>
-        <td><a class="btn btn-primary" href="{{route('comics.show',$item->id)}}"><i class="fa-regular fa-eye"></i></a></td>
+        <th scope="row">{{$comic['title']}}</th>
+        <td>{{$comic['price']}} $</td>
+        <td>{{$comic['type']}}</td>
+        <td>{{$comic['sale_date']}}</td>
+        <td>
+            <a class="btn btn-primary" href="{{route('comics.show',$comic)}}"><i class="fa-regular fa-eye"></i></a>
+            <a class="btn btn-warning" href="{{route('comics.edit',$comic)}}"><i class="fa-solid fa-pen"></i></a>
+        </td>
       </tr>
     @endforeach
     </tbody>
