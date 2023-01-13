@@ -13,7 +13,7 @@
         <th scope="col">Price</th>
         <th scope="col">Type</th>
         <th scope="col">Sale Date</th>
-        <th>Detail</th>
+        <th class="text-center">Control</th>
       </tr>
     </thead>
     <tbody>
@@ -23,9 +23,14 @@
         <td>{{$comic['price']}} $</td>
         <td>{{$comic['type']}}</td>
         <td>{{$comic['sale_date']}}</td>
-        <td>
+        <td class="d-flex justify-content-evenly">
             <a class="btn btn-primary" href="{{route('comics.show',$comic)}}"><i class="fa-regular fa-eye"></i></a>
             <a class="btn btn-warning" href="{{route('comics.edit',$comic)}}"><i class="fa-solid fa-pen"></i></a>
+            <form action="{{route('comics.destroy',$comic)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+            </form>
         </td>
       </tr>
     @endforeach
