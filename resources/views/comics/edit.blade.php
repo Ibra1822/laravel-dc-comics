@@ -5,12 +5,25 @@
 <div class="home-btn text-center">
     <a class="btn btn-primary" href="{{route('comics.index')}}">Home</a>
 </div>
+
+@if ($errors->any())
+
+<div class="errors">
+<ul>
+    @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+    @endforeach
+</ul>
+</div>
+
+@endif
+
 <form action="{{route('comics.update',$comic)}}" class="p-5" method="POST">
 @csrf
 @method('PUT')
     <div class="mb-3 ">
         <label  class="form-label">Title</label>
-        <input type="text" value="{{$comic->title}}" name="title" class="form-control" >
+        <input type="text" value="{{$comic->title}}" name="title" class="form-control @error('title') error @enderror " >
       </div>
       <div class="mb-3">
         <label  class="form-label">Thumb</label>
@@ -18,19 +31,21 @@
       </div>
       <div class="mb-3">
         <label  class="form-label">Price</label>
-        <input type="text" value="{{$comic->price}}" name="price" class="form-control">
+        <input type="text" value="{{$comic->price}}" name="price" class="form-control @error('price') error @enderror ">
       </div>
       <div class="mb-3">
         <label  class="form-label">Series</label>
-        <input type="text" value="{{$comic->series}}" name="series" class="form-control">
+        <input type="text" value="{{$comic->series}}" name="series" class="form-control @error('series') error @enderror  ">
       </div>
       <div class="mb-3">
         <label  class="form-label">Sale Date</label>
-        <input type="text" value="{{$comic->sale_date}}" name="sale_date" class="form-control">
+        <input type="text" value="{{$comic->sale_date}}" name="sale_date" class="form-control @error('sale_date') error @enderror ">
       </div>
       <div class="mb-3">
         <label  class="form-label">Type</label>
-        <input type="text" value="{{$comic->type}}" name="type" class="form-control">
+        <input type="text" value="{{$comic->type}}" name="type" class="form-control
+        @error('type') error @enderror
+        ">
       </div>
       <div class="mb-3">
         <label  class="form-label">Description</label>

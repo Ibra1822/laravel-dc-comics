@@ -24,3 +24,23 @@ h4 {
         object-fit: cover;
     }
 }
+
+.errors {
+    border: 3px solid rgb(255, 56, 56);
+    border-radius: 20px;
+    width: 680px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+    ul {
+        list-style: none;
+        text-align: center;
+        li {
+            color: red;
+        }
+    }
+}
+
+.error {
+    border: 2px solid red;
+}
