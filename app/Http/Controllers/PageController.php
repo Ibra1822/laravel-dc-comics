@@ -40,13 +40,7 @@ class PageController extends Controller
     {
         $element = $request->all();
         $newComic = new Comic();
-        $newComic->title = $element['title'];
-        $newComic->desc = $element['desc'];
-        $newComic->thumb = $element['thumb'];
-        $newComic->price = $element['price'];
-        $newComic->series = $element['series'];
-        $newComic->sale_date = $element['sale_date'];
-        $newComic->type = $element['type'];
+        $newComic->fill($element);
         $newComic->save();
 
       return  redirect()->route('comics.show',$newComic);
